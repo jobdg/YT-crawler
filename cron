@@ -1,0 +1,7 @@
+SHELL=/bin/bash
+PATH=/sbin:/bin:/usr/sbin:/usr/bin
+
+0 0 * * * php ../data/collectOnce.php
+0 1 * * * php ../data/collectEverytime.php
+0 2 * * * php ../data/downloadVideos.php
+0 4 * * * php ../data/convertVideos.php
