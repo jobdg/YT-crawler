@@ -22,6 +22,8 @@ if ($entry)
 	$obj->username = $entry->data->uploader;
 	//swithcing to user:
 	$usr=$entry->data->uploader;
+
+	//needs new dataloader
 	$user = json_decode(file_get_contents("https://gdata.youtube.com/feeds/api/users/".$usr."?v=2&alt=json"));
 	$obj->name = $user->entry->author[0]->name->{'$t'};
 	$obj->views = $user->entry->{'yt$statistics'}->totalUploadViews;
